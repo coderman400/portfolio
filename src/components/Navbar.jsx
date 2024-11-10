@@ -4,7 +4,7 @@ import { FaGithub } from 'react-icons/fa';
 const Navbar = () => {
   return (
     <nav className="w-full mt-4 p-4">
-      <div className="w-11/12 mx-auto rounded-lg px-4 py-6 bg-gray-800 text-white shadow-lg flex justify-between items-center">
+      <div className="mx-auto rounded-lg px-4 py-6 bg-dun text-white shadow-lg flex justify-between items-center">
         <div className="flex items-center space-x-4">
           <div className="text-xl font-bold">Arvind</div>
         </div>
