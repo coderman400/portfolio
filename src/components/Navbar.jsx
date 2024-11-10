@@ -9,7 +9,7 @@ const Navbar = () => {
           <div className="text-2xl font-bold">Arvind</div>
         </div>
         <div className="flex space-x-4">
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/coderman400/" target="_blank" rel="noopener noreferrer">
             <FaGithub className='h-8 w-8' />
           </a>
         </div>

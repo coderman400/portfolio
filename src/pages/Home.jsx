@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import rat from '../assets/rat.png';
-import ratCooking from '../assets/rat-cooking.jpg';
 import { ArrowUpRightIcon } from '@heroicons/react/16/solid';
-import { FaGithub , FaInstagram , FaLinkedin } from 'react-icons/fa';
+import { FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import { FaTwitter } from 'react-icons/fa6';
 import circularicon from '../assets/intro-icon.svg'
 import aboutIcon from '../assets/about-icon.svg'
 import demesp from '../assets/demesp.png'
 import ffcs from '../assets/ffcs.png'
 import askpdf from '../assets/askpdf.png'
+import me from '../assets/me.png'
+import mecolor from '../assets/mecolor.png'
+
 const Home = () => {
   const [expanded, setExpanded] = useState(0);
 
@@ -17,7 +18,7 @@ const Home = () => {
   const data = {
     mainContent: {
       image: circularicon,
-      photo: rat,
+      photo: mecolor,
       catchphrase: "Need a website to really create that buzz?",
       description: "You're in the right place.",
       email: "achurox1121@gmail.com",
@@ -29,10 +30,9 @@ const Home = () => {
     },
     about: {
       image: aboutIcon,
-      text: "I'm Arvind Babu. A 20 year old computer science student at VIT, working on all sorts of web dev technologies. Specialized in React.js and Tailwind and also made projects with Framer, Web3.js, Solidity, FastAPI, and much more. ",
+      text: "I'm Arvind Babu. A 20 year old computer science student at VIT, working with all sorts of web dev technologies. Specialized in React.js and Tailwind while I've also made projects with Framer, Web3.js, Solidity, FastAPI, and much more.",
     },
     projects: [
-        
       {
         title: "DeMESP",
         image: demesp,
@@ -65,7 +65,7 @@ const Home = () => {
       transition={{ duration: 1 }}
     >
       <motion.div
-        className="grid grid-cols-3 md:grid-cols-3 gap-4 p-4"
+        className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4"
         initial="hidden"
         animate="visible"
         variants={{
@@ -77,10 +77,10 @@ const Home = () => {
         }}
       >
         {/* Main Content Section */}
-        <motion.div className="grid grid-cols-2 gap-4 col-span-2">
-          <motion.div className="flex gap-4 col-span-2">
+        <motion.div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:col-span-2">
+          <motion.div className="flex lg:flex-row flex-col gap-4 md:col-span-2">
             <motion.div
-              className="w-7/12 bg-dun rounded-lg text-6xl h-[28rem] p-8 flex flex-col justify-between font-serif"
+              className="w-full lg:w-7/12 bg-dun rounded-lg text-6xl h-[28rem] p-8 flex flex-col justify-between font-serif"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1 }}
@@ -101,17 +101,17 @@ const Home = () => {
               </p>
             </motion.div>
             <motion.div
-              className="w-5/12 bg-jet rounded-lg overflow-hidden"
+              className="w-full lg:w-5/12 bg-jet rounded-lg overflow-hidden"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.2 }}
             >
-              <img src={data.mainContent.photo} alt="rat" className="w-full h-[28rem] object-cover" />
+              <img src={data.mainContent.photo} alt="photo" className="w-full opacity-70 h-[28rem] object-cover" />
             </motion.div>
           </motion.div>
 
           <motion.div
-            className="bg-dun h-80 flex flex-col justify-between p-8 text-xl rounded-lg"
+            className="bg-dun h-80 flex flex-col justify-between p-8 text-lg md:text-xl rounded-lg"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.4 }}
@@ -126,7 +126,7 @@ const Home = () => {
                 repeatType: 'reverse',
               }}
             />
-            <div>{data.about.text}</div>
+            <div className='overflow-hidden'>{data.about.text}</div>
           </motion.div>
 
           <motion.div
@@ -171,9 +171,9 @@ const Home = () => {
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    >
-                    <ArrowUpRightIcon className={`${expanded === index ? '' : 'hidden'}  hover:scale-110 transition duration-200 h-12 w-12`} />
-                    </a>
+                  >
+                    <ArrowUpRightIcon className={`${expanded === index ? '' : 'hidden'} hover:scale-110 transition duration-200 h-12 w-12`} />
+                  </a>
                 </div>
                 <AnimatePresence>
                   {expanded === index && (
@@ -194,6 +194,7 @@ const Home = () => {
               </div>
             ))}
           </motion.div>
+
           <motion.div
             className="bg-dun h-24 rounded-lg flex flex-row justify-evenly p-8 items-center"
             initial={{ opacity: 0 }}
